@@ -1,0 +1,23 @@
+---
+title: "Report"
+author: "Midterm Project Group 8"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+## This report examines NBA player statistics, sourced from the NBA's data as of February 24, 2024. Through descriptive and multiregression analyses, we explore player performance differentials between Eastern and Western Conference teams, aiming to uncover insights into defensive statistics and shooting percentages' influence on player scoring. Customization options allow for tailored insights relevant to regional and overall NBA championships.
+
+```{r, load-data}
+getwd()
+here::i_am("report.Rmd")
+data <- readRDS(
+  file = here::here("output", "data.rds")
+)
+```
+
