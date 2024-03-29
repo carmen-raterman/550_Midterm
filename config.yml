@@ -1,0 +1,7 @@
+default:
+  division: 1
+
+west:
+  division: 0
+  
+#in bash, need to specify $ export WHICH_CONFIG=default
