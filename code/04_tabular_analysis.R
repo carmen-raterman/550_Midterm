@@ -1,4 +1,8 @@
+here::i_am("code/04_tabular_analysis.R")
 
+data <- readRDS(
+  file = here::here("output/data.rds")
+)
 # loading packages
 pacman::p_load(dplyr, gt, labelled)
 
@@ -40,5 +44,5 @@ table1 <- data1 %>%
     columns = c(Avg_Points_Per_36, Median_Points_Per_36, Avg_Rebounds_Per_36, Median_Rebounds_Per_36),
     decimals = 2
   )
-
-print(table1)
+# Saving
+gtsave(filename = here::here("output", "table.png"))
