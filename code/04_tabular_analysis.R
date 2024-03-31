@@ -1,8 +1,3 @@
-here::i_am("code/04_tabular_analysis.R")
-
-data <- readRDS(
-  file = here::here("output/data.rds")
-)
 
 # loading packages
 pacman::p_load(dplyr, gt, labelled)
@@ -47,6 +42,3 @@ table1 <- data1 %>%
   )
 
 print(table1)
-
-# saving 
-gt::gtsave(table1, filename = here("output", "NBA_Player_Performance_Table.png"))
