@@ -1,0 +1,25 @@
+
+Call:
+lm(formula = rank ~ rebounds_offensive + rebounds_defensive + 
+    steals + blocks + turnovers + fouls, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-261.313 -146.711   -0.294  144.773  284.509 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        289.9433    27.1145  10.693   <2e-16 ***
+rebounds_offensive  -3.3771     6.1107  -0.553    0.581    
+rebounds_defensive  -0.7792     4.2356  -0.184    0.854    
+steals               4.4848     8.8970   0.504    0.615    
+blocks               2.0332    12.1636   0.167    0.867    
+turnovers           -4.6147     4.2705  -1.081    0.281    
+fouls               -2.7900     4.6103  -0.605    0.546    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 160.6 on 230 degrees of freedom
+Multiple R-squared:  0.008331,	Adjusted R-squared:  -0.01754 
+F-statistic: 0.322 on 6 and 230 DF,  p-value: 0.9251
+

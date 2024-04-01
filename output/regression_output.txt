@@ -5,18 +5,18 @@ lm(formula = pts ~ field_goal_pct + three_pt_pct + free_throw_pct,
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--12.7130  -3.2865  -0.8887   2.8192  18.4010 
+-10.5463  -3.1549  -0.9715   3.2656  18.5544 
 
 Coefficients:
                Estimate Std. Error t value Pr(>|t|)    
-(Intercept)     -3.5272     1.9939  -1.769   0.0776 .  
-field_goal_pct  27.3118     3.4671   7.877 2.77e-14 ***
-three_pt_pct     0.8008     2.6375   0.304   0.7616    
-free_throw_pct   8.6930     1.9393   4.483 9.47e-06 ***
+(Intercept)      -3.016      3.224  -0.936   0.3508    
+field_goal_pct   27.773      5.311   5.229 4.82e-07 ***
+three_pt_pct      2.644      4.201   0.629   0.5299    
+free_throw_pct    6.898      3.131   2.203   0.0289 *  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 4.892 on 429 degrees of freedom
-Multiple R-squared:  0.1903,	Adjusted R-squared:  0.1846 
-F-statistic:  33.6 on 3 and 429 DF,  p-value: < 2.2e-16
+Residual standard error: 5.1 on 175 degrees of freedom
+Multiple R-squared:  0.1833,	Adjusted R-squared:  0.1693 
+F-statistic: 13.09 on 3 and 175 DF,  p-value: 9.397e-08
 

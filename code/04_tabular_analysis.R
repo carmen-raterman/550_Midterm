@@ -45,4 +45,4 @@ table <- data %>%
     decimals = 2
   )
 # Saving
-gg::gtsave(table, filename = here::here("output", "table.png"))
+gt::gtsave(table, filename = here::here("output", "table.png"))
