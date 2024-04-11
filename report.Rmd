@@ -9,6 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, read-config, include = FALSE}
+WHICH_CONFIG <- Sys.getenv("WHICH_CONFIG")
+config_list <- config::get(
+  config = WHICH_CONFIG
+)
+```
+
 # Introduction
 
 ## This report examines NBA player statistics, sourced from the NBA's data as of February 24, 2024. Through descriptive and multiregression analyses, we explore player performance differentials between Eastern and Western Conference teams, aiming to uncover insights into defensive statistics and shooting percentages' influence on player scoring. Customization options allow for tailored insights relevant to regional and overall NBA championships.
@@ -20,4 +27,33 @@ data <- readRDS(
   file = here::here("output", "data.rds")
 )
 ```
+
+# Descriptive Analysis
+
+## Tabular Analysis
+
+```{r, table-one}
+knitr::include_graphics(
+  here::here("output", "table.png")
+)
+
+#table_one
+```
+
+## Graphical Analysis
+
+# Regression Analysis
+
+## Regression 2
+
+```{r, regression-2}
+
+```
+
+## Regression 3
+
+```{r, regression-3}
+
+```
+
 
