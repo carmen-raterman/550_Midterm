@@ -4,7 +4,7 @@ This project focuses on analyzing the ranking of top NBA players based on per 36
 
 ## Code Structure
 
-The project directory contains three folders:
+The project directory contains three relevant folders:
 
 -   code: This folder contains R scripts for various stages of the data analysis process.
 -   output: This folder stores the output files generated during the analysis.
@@ -19,6 +19,16 @@ To replicate the analysis:
 2\. Navigate to the project directory.
 
 3\. Run `make` in your command line to execute data processing and to generate the report.
+
+## Setting Environment Variables
+
+This project uses environment variables to configure settings such as the division (e.g., East or West). To set these environment variables, follow these steps:
+
+1\. Choose Configuration: Determine which configuration you want to use. This project provides three configurations: `default`, `west`, and `east`.
+
+2\. Set Environment Variable: From the command line, use the export command to set the WHICH_CONFIG environment variable to the desired configuration. For example: `export WHICH_CONFIG="west"`
+
+3\. After setting the environment variable, run the `make` command to execute data processing and generate the report.
 
 ## Additional Notes
 

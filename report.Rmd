@@ -6,21 +6,19 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r, read-config, include = FALSE}
-WHICH_CONFIG <- Sys.getenv("WHICH_CONFIG")
-config_list <- config::get(
-  config = WHICH_CONFIG
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  fig.align = 'center',
+  out.width = "400px"
 )
 ```
 
 # Introduction
 
-## This report examines NBA player statistics, sourced from the NBA's data as of February 24, 2024. Through descriptive and multiregression analyses, we explore player performance differentials between Eastern and Western Conference teams, aiming to uncover insights into defensive statistics and shooting percentages' influence on player scoring. Customization options allow for tailored insights relevant to regional and overall NBA championships.
+This report examines NBA player statistics, sourced from the NBA's data as of February 24, 2024. Through descriptive and multiregression analyses, we explore player performance differentials between Eastern and Western Conference teams, aiming to uncover insights into defensive statistics and shooting percentages' influence on player scoring. Customization options allow for tailored insights relevant to regional and overall NBA championships.
 
-```{r, load-data}
+```{r, load-data, include=FALSE}
 getwd()
 here::i_am("report.Rmd")
 data <- readRDS(
@@ -32,28 +30,80 @@ data <- readRDS(
 
 ## Tabular Analysis
 
+The tabular analysis shows how well NBA teams in the East and West conferences perform. It shows the average and middle number of points and rebounds in each conference, score points and grab rebound every 36 minutes. This helps to provide a quick comparison of which conference has a better or worse performance overall.
+
 ```{r, table-one}
 knitr::include_graphics(
   here::here("output", "table.png")
 )
 
-#table_one
 ```
 
 ## Graphical Analysis
+
+The charts below collectively show that NBA teams are fairly balanced in terms of player numbers and scoring, with most players scoring a few points per game, while points scored don't strongly predict how many rebounds a player will get.
+
+```{r, descriptive}
+#bar plot team distrib
+knitr::include_graphics(
+  here::here("output", "bar_plot_team_distribution.png")
+)
+
+#box plot performance by team
+knitr::include_graphics(
+  here::here("output", "box_plot_performance_by_team.png")
+)
+
+#histogram points distrib
+knitr::include_graphics(
+  here::here("output", "histogram_pts_distribution.png")
+)
+
+#scatter plot pts vs rebounds
+knitr::include_graphics(
+  here::here("output", "scatter_plot_pts_vs_rebounds.png")
+)
+
+#points per game by team
+knitr::include_graphics(
+  here::here("output", "points_per_game_by_conference.png")
+)
+
+```
 
 # Regression Analysis
 
 ## Regression 2
 
+In this figure, we have a linear regression analysis illustrating the relationship between three-point percentage, field goal percentage, and free throw percentage of NBA players and their average points per game. Each data point represents an individual player's statistics, with their respective three-point percentage, field goal percentage, and free throw percentage plotted on the x-axis, and points are on the y-axis. The fitted regression line provides insight into the overall trend, showing how changes in three-point, field-goal, and free-throw percentages influence a player's points per game. There is a general positive trend.
+
 ```{r, regression-2}
+#regression 2 output
+knitr::include_graphics(
+  here::here("output", "regression2_results.png")
+)
+
+regression2_text <- readLines("output/regression_output.txt")
+
+#printing
+cat(regression2_text, sep = "\n")
 
 ```
 
 ## Regression 3
 
-```{r, regression-3}
+From this output, defensive statistics (rebounds, steals, blocks, etc.) were not predicted of team rank. The predicted rank for the majority of data points was between 250 and 300.
 
+```{r, regression-3}
+#regression 3 output
+knitr::include_graphics(
+  here::here("output", "regression3_results.png")
+)
+
+regression3_text <- readLines("output/regression3_output.txt")
+
+#printing
+cat(regression3_text, sep = "\n")
 ```
 
 

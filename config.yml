@@ -4,4 +4,7 @@ default:
 west:
   division: 0
   
+east:
+  divison: 1
+  
 #in bash, need to specify $ export WHICH_CONFIG=default
